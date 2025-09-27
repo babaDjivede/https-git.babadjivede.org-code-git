@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maître Marabout Spirituel - Solutions aux problèmes de vie</title>
+    <style>
+        :root {
+            --primary-color: #4b0082;
+            --secondary-color: #9370db;
+            --accent-color: #ffd700;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+            --dark-color: #1a1a1a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tagline {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 0.5rem;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+            border-radius: 4px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%234b0082" opacity="0.1"/><path d="M0 0L100 100" stroke="%234b0082" stroke-width="1" opacity="0.2"/><path d="M100 0L0 100" stroke="%234b0082" stroke-width="1" opacity="0.2"/></svg>');
+            background-size: cover;
+            padding: 3rem 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .article-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-content {
+            padding: 1.5rem;
+        }
+        
+        .article-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .contact {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .contact h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+        }
+        
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">🔮</div>
+        <h1>Maître Marabout Spirituel</h1>
+        <p class="tagline">Solutions spirituelles pour tous les problèmes de la vie</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#voyance">Voyance Gratuite</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section id="accueil" class="hero">
+            <h2>Bienvenue dans mon univers spirituel</h2>
+            <p>Je suis Maître Marabout, spécialiste des solutions ancestrales pour résoudre vos problèmes de santé, d'amour, de chance et de justice. Avec plus de 35 ans d'expérience, je vous propose des solutions efficaces et durables.</p>
+            <a href="#contact" class="btn">Contactez-moi maintenant</a>
+        </section>
+        
+        <section id="services">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Mes Domaines d'Expertise</h2>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Pharmacopée Traditionnelle</h3>
+                        <p>Traitements naturels pour les maladies comme l'hépatite, les hémorroïdes, la tension artérielle et bien d'autres.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Rituels d'Amour et Retour Affectif</h3>
+                        <p>Solutions puissantes pour retrouver l'amour perdu, attirer un partenaire ou renforcer une relation existante.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Problèmes Judiciaires</h3>
+                        <p>Interventions spirituelles pour résoudre les problèmes juridiques, éviter la prison ou gagner un procès.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Contre la Stérilité</h3>
+                        <p>Traitements traditionnels pour vaincre la stérilité et réaliser le rêve d'avoir un enfant.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Bagues et Parfums de Chance</h3>
+                        <p>Accessoires chargés d'énergie positive pour attirer la chance et le succès dans tous les domaines de la vie.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-content">
+                        <h3>Voyance Gratuite</h3>
+                        <p>Consultations de voyance pour vous éclairer sur votre avenir et vous guider dans vos décisions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="articles">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Articles Récents</h2>
+            <div class="articles">
+                <!-- 12 exemples d'articles sur 35+ -->
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Plantes médicinales pour soigner l'hépatite B</h3>
+                        <p>Découvrez les secrets des plantes africaines efficaces contre l'hépatite.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Rituel de retour affectif en 7 jours</h3>
+                        <p>Une méthode ancestrale pour faire revenir l'être aimé.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Solution contre les problèmes judiciaires</h3>
+                        <p>Comment se protéger spirituellement pendant un procès.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Traitement naturel des hémorroïdes</h3>
+                        <p>Remèdes traditionnels pour soulager définitivement les hémorroïdes.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Normaliser la tension artérielle</h3>
+                        <p>Recettes naturelles pour réguler la tension sans médicaments.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Bague de chance pour les affaires</h3>
+                        <p>Comment une bague chargée peut transformer votre vie professionnelle.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Parfums pour attirer la richesse</h3>
+                        <p>Les fragrances mystiques qui attirent l'abundance.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Vaincre la stérilité masculine</h3>
+                        <p>Solutions naturelles pour améliorer la fertilité.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Rituel de protection contre les ennemis</h3>
+                        <p>Protégez-vous spirituallement des mauvaises intentions.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Désenvoutement d'urgence</h3>
+                        <p>Reconnaître et neutraliser les mauvais sorts.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Augmenter la chance aux jeux</h3>
+                        <p>Techniques spirituelles pour améliorer vos chances de gain.</p>
+                    </div>
+                </div>
+                
+                <div class="article-card">
+                    <div class="article-content">
+                        <h3>Rituel de purification énergétique</h3>
+                        <p>Nettoyez votre aura et votre environnement des énergies négatives.</p>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 1rem;"><em>Et plus de 23 autres articles disponibles sur demande...</em></p>
+        </section>
+        
+        <section id="contact" class="contact">
+            <h2>Contactez-moi</h2>
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <div class="contact-icon">📱</div>
+                    <h3>WhatsApp / Téléphone</h3>
+                    <p>+229 01 94 55 31 24</p>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">✉️</div>
+                    <h3>E-mail</h3>
+                    <p>amanyondah60@gmail.com</p>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">🔮</div>
+                    <h3>Voyance Gratuite</h3>
+                    <p>Contactez-moi pour une consultation</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Maître Marabout Spirituel - Tous droits réservés</p>
+        <p>Solutions ancestrales pour problèmes modernes</p>
+    </footer>
+</body>
+</html>
